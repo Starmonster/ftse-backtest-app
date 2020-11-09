@@ -36,7 +36,7 @@ period start time, open, high, low,\nclose, candle direction \
 signal yes / no features:")
 
         # Read in our static dataframe and display
-        df = pd.read_csv("ftse_static.csv", parse_dates=["time"])
+        df = pd.read_csv("../data/ftse_static.csv", parse_dates=["time"])
 
         st.dataframe(df)
 

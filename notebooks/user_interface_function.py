@@ -14,7 +14,7 @@ def user_interface():
     
     """
     
-    dfx = pd.read_csv("ftse_static.csv", parse_dates=["time"])
+    dfx = pd.read_csv("../data/ftse_static.csv", parse_dates=["time"])
    
     
     
@@ -129,7 +129,7 @@ def app_interface(signal, direction, target, drawdown, size):
 
     """
 
-    dfx = pd.read_csv("ftse_static.csv", parse_dates=["time"])
+    dfx = pd.read_csv("..data/ftse_static.csv", parse_dates=["time"])
 
     # Conditional statements fed by the signal input
     if signal == 'Yes':

@@ -9,7 +9,7 @@
 import pandas as pd
 
 def dataframe():
-    data = pd.read_csv("ftse_static.csv", parse_dates=["time"])
+    data = pd.read_csv("../data/ftse_static.csv", parse_dates=["time"])
     df1 = DataFrame(data)
    
     
@@ -20,7 +20,7 @@ def dataframe():
 # Function to state the outcome of a trade based on target and drawdown levels specified
 def outcome_gen(target, drawdown):
    
-    df1 = pd.read_csv("ftse_static.csv", parse_dates=["time"])
+    df1 = pd.read_csv("../data/ftse_static.csv", parse_dates=["time"])
     
     
     #We'll add a print report to show the progress we're making mid function execute
@@ -131,7 +131,7 @@ def profit_gen(target, drawdown):
     In this function we'll store all the profits in a list and then join them to the master dataframe
     """
     #store the static dataframe in a variable our function can use
-    df1 = pd.read_csv("ftse_static.csv", parse_dates=["time"]).join(outcome_gen(target, drawdown))
+    df1 = pd.read_csv("../data/ftse_static.csv", parse_dates=["time"]).join(outcome_gen(target, drawdown))
     
     #create a list that holds only the first 0 value for the first row of our profit
     profit = []
@@ -227,7 +227,7 @@ def profit_gen(target, drawdown):
 def drawdown_gen(target, drawdown):
     # Give function access to the global variable, x.
 
-    df1 = pd.read_csv("ftse_static.csv",
+    df1 = pd.read_csv("../data/ftse_static.csv",
                       parse_dates=["time"]).join(outcome_gen(target, drawdown)).join(profit_gen(target, drawdown))
 
     # Create our iterable variables
